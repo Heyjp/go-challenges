@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+export CUROFF="\e[?25l"
+export CURON="\e[?25h"
+
+if test -t 1; then
+# Regular Colors
+  Black='\033[0;30m'        # Black
+  Red='\033[0;31m'          # Red
+  Green='\033[0;32m'        # Green
+  Yellow='\033[0;33m'       # Yellow
+  Blue='\033[0;34m'         # Blue
+  Purple='\033[0;35m'       # Purple
+  Cyan='\033[0;36m'         # Cyan
+  White='\033[0;37m'          
+  RESET=$'\e[0m'
+  CLEAR=$'\e[H\e[2J'
+fi
+
+randcolor() {
+  printf "\e[3$((RANDOM%8))m"
+}
+
+# printf "${BLACK}black=$'\\\\e[30m'\n${RESET}"
+# printf "${RED}red=$'\\\\e[31m'\n$RESET"
+# printf "$(randcolor)random\n$RESET"

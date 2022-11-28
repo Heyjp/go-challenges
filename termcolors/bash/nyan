@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source ./termcolors
+
+printf $CLEAR$CUROFF
+trap "printf \"$CLEAR$CURON\"; exit; trap -- - SIGINT SIGTERM" SIGTERM SIGINT
+
+while true; do
+  printf $CLEAR
+  printf "$(randcolor)nyan"
+  sleep 0.51
+done
+
+printf $RESET
